@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+    <title>My Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        h2 {
+            text-align: center;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+    <script>
+        function submitResume() {
+            let name = document.getElementById("name").value;
+            let qualification = document.getElementById("qualification").value;
+            let experience = document.getElementById("experience").value;
+            let skills = document.getElementById("skills").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let linkedin = document.getElementById("linkedin").value;
+            
+            if (name.trim() === "" || qualification.trim() === "" || experience.trim() === "" || 
+                skills.trim() === "" || email.trim() === "" || phone.trim() === "") {
+                alert("All fields must be filled!");
+                return false;
+            }
+            alert("Resume submitted successfully!");
+            return true;
+        }
+
+        function updateResume() {
+            alert("Resume updated successfully!");
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>My Resume</h2>
+        <form onsubmit="return submitResume()">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <input type="text" id="qualification" placeholder="Qualification" required>
+            <input type="text" id="experience" placeholder="Work Experience (years)" required>
+            <input type="text" id="skills" placeholder="Skills (comma separated)" required>
+            <input type="url" id="linkedin" placeholder="LinkedIn Profile (optional)">
+            <button type="submit">Submit Resume</button>
+            <button type="button" onclick="updateResume()">Update Resume</button>
+        </form>
+    </div>
+</body>
+</html>

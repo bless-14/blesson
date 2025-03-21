@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Analyzer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, rgb(255, 183, 77), rgb(255, 94, 98));
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            width: 80%;
+            max-width: 500px;
+        }
+        select, button {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+        button {
+            background-color: #ff3d00;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #d32f2f;
+        }
+        #result {
+            margin-top: 15px;
+            padding: 10px;
+            background: #f1f1f1;
+            border-radius: 5px;
+            display: none;
+            text-align: left;
+        }
+    </style>
+    <script>
+        function showJobs() {
+            let career = document.getElementById("careerSelect").value;
+            let resultDiv = document.getElementById("result");
+            
+            let jobOptions = {
+                "Software": ["Software Developer", "Programmer", "Engineer"],
+                "Data": ["Data Analyst", "Data Scientist", "AI Specialist"],
+                "Marketing": ["Digital Marketing", "SEO Specialist", "Brand Manager"],
+                "Finance": ["Accountant", "Financial Analyst", "Investment Banker"],
+                "Engineering": ["Mechanical Engineer", "Civil Engineer", "Electrical Engineer"]
+            };
+            
+            if (career) {
+                let jobList = "<ol>";
+                jobOptions[career].forEach(job => {
+                    jobList += `<li>${job}</li>`;
+                });
+                jobList += "</ol>";
+                resultDiv.innerHTML = jobList;
+                resultDiv.style.display = "block";
+            } else {
+                resultDiv.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Career Selector</h2>
+        <select id="careerSelect" onchange="showJobs()">
+            <option value="">Choose Your Career</option>
+            <option value="Software">Software</option>
+            <option value="Data">Data</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Finance">Finance</option>
+            <option value="Engineering">Engineering</option>
+        </select>
+        <div id="result"></div>
+    </div>
+</body>
+</html>

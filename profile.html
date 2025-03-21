@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Info</title>
+    <link rel="stylesheet" href="style3.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Personal Information</h2>
+        <p><strong>Full Name:</strong> <span id="displayName"></span></p>
+        <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+        <p><strong>Phone:</strong> <span id="displayPhone"></span></p>
+        <a href="editdetails.html" class="btn">Edit Info</a>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("displayName").textContent = localStorage.getItem("name") || "Not set";
+            document.getElementById("displayEmail").textContent = localStorage.getItem("email") || "Not set";
+            document.getElementById("displayPhone").textContent = localStorage.getItem("phone") || "Not set";
+        });
+    </script>
+</body>
+</html>

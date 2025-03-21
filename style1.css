@@ -1,0 +1,78 @@
+body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #722F37;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            }
+
+        .login-container {
+            background-color: #fff;
+            border-radius: 10px;
+            height:100%;
+            padding: 10px;
+            width: 350px;
+            text-align: center;}
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;}
+
+        .input-field {
+            width: 80%;
+            padding: 10px;
+            margin: 10px ;
+            background-color: rgb(202, 197, 197);
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .btn {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn-login {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        .btn-login :hover{
+            background-color:#98a7b8
+        }
+
+        .btn-facebook {
+            background-color: #3B5998;
+            color: white;
+        }
+
+        .btn-google {
+            background-color: #DB4437;
+            color: white;
+        }
+
+        .link-container {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            text-align: center;
+           
+        }
+
+        .link-container a {
+            color: #070707;
+            text-decoration: none;
+        }
+
+        .link-container a:hover {
+            text-decoration: underline;
+        }
